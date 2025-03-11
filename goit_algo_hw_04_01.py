@@ -15,6 +15,7 @@ def total_salary(path):
             number_of_employees = len(records)
             if number_of_employees > 0:
                 average_salary = total / number_of_employees  # Calculate average
+                
             else:
                 average_salary = 0
                 print("Number of employees is less then 1")
