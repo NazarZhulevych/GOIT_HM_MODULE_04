@@ -9,12 +9,13 @@ def total_salary(path):
                 line = line.strip()  # Remove leading/trailing whitespace
                 if line:  # Ignore empty lines
                     name, salary = line.split(",")  # Split into name and salary
-                    records.append((name, int(salary)))  # Store as tuple
+                    records.append((name, float(salary)))  # Store as tuple
             
             total = sum(salary for _, salary in records)  # Compute total salary
             number_of_employees = len(records)
+            if number_of_emplyoees 
 
-            averange_salary = int(total/number_of_employees)
+            averange_salary = float(total/number_of_employees)
 
             return total, averange_salary
     except FileNotFoundError:
