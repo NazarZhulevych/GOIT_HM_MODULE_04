@@ -43,7 +43,6 @@ def find_phone(args, contacts):
         return f"Unexpected error: {e}"
 
 def main():
-    """Main function to handle user interactions."""
     contacts = {}
     print("Welcome to the assistant bot!")
     while True:
