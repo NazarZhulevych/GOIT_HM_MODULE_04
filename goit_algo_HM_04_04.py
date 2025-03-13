@@ -1,9 +1,11 @@
 def parse_input(user_input):
     try:
-        cmd, *args = user_input.split()
-        cmd = cmd.strip().lower()
-        return cmd, *args 
-    except ValueError:
+        parts = user_input.split()
+        if not parts:
+            return "", []  
+        cmd, args = parts[0], parts[1:]  
+        return cmd.strip().lower(), args
+    except Exception as e:
         return "", []
 
 def add_contact(args, contacts):
@@ -48,11 +50,11 @@ def main():
     while True:
         try:
             user_input = input("Enter a command: ").strip()
-            if not user_input:  
+            if not user_input:
                 print("Error: Please enter a command.")
                 continue
 
-            command, args = parse_input(user_input)
+            command, args = parse_input(user_input)  # Correct unpacking
 
             if command in ["close", "exit"]:
                 print("Goodbye!")
