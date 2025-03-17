@@ -44,6 +44,14 @@ def find_phone(args, contacts):
     except Exception as e:
         return f"Unexpected error: {e}"
 
+def all_phones(contacts):
+    if not contacts:
+        print("No contacts found.")
+    else:
+        for name, phone in contacts.items():
+            print(f"{name}: {phone}")
+
+
 def main():
     contacts = {}
     print("Welcome to the assistant bot!")
@@ -64,7 +72,7 @@ def main():
             elif command == "add":
                 print(add_contact(args, contacts))
             elif command == "all":
-                print(contacts if contacts else "No contacts found.")
+                all_phones(contacts)
             elif command == "change":
                 print(change_number(args, contacts))
             elif command == "phone":
