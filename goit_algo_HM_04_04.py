@@ -46,10 +46,8 @@ def find_phone(args, contacts):
 
 def all_phones(contacts):
     if not contacts:
-        print("No contacts found.")
-    else:
-        for name, phone in contacts.items():
-            print(f"{name}: {phone}")
+        return "No contacts found."
+    return "\n".join(f"{name}: {phone}" for name, phone in contacts.items())
 
 
 def main():
@@ -72,7 +70,7 @@ def main():
             elif command == "add":
                 print(add_contact(args, contacts))
             elif command == "all":
-                all_phones(contacts)
+                print(all_phones(contacts))
             elif command == "change":
                 print(change_number(args, contacts))
             elif command == "phone":
